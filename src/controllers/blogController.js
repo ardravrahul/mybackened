@@ -83,7 +83,7 @@ const filterBlogs = async function (req, res) {
             }
 
             obj.isDeleted = false
-            obj.isPublished=false
+          
 
             let data = await blogModel.findOne(obj)
             if (data) {
@@ -91,7 +91,7 @@ const filterBlogs = async function (req, res) {
 
             }
             else {
-                return res.status(404).send({ status: false, msg: "The given data is invalid!" })
+                return res.status(404).send({ status: false, msg: "The given data doesn't found !" })
             }
 
         }
