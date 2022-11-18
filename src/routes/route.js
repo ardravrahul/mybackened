@@ -10,7 +10,7 @@ router.post("/authors",authorController.createAuthor) // for author creation
 
 router.post("/login",authorController.authorLogin) //for login author
 
-router.post("/blogs",blogController.createBlog) //for blogs creation 
+router.post("/blogs",middleware.authentication,blogController.createBlog) //for blogs creation 
 
 router.get("/filterBlogs",middleware.authentication,blogController.filterBlogs) //for fetching blogs with query
 router.get("/filterBlog",middleware.authentication,blogController.allBlogs) //for fetching all blogs
