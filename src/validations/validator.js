@@ -12,9 +12,10 @@ const isValid = function (value) {
     if (typeof value === 'string' && value.trim().length === 0) return false
     return true;
 }
-
-
-
+function regxName(value) {
+    let reg = /^[A-Za-z ]+$/; // valid alphabet with space
+    return reg.test(value);
+  }
 //validation for Title 
 
 function isValidtitle(title) {
@@ -27,4 +28,4 @@ function isValidEmail(email) {
     return re.test(String(email).toLowerCase());
 }
 
-module.exports={isValidRequestBody,isValid,isValidtitle,isValidEmail}
+module.exports={isValidRequestBody,isValid,isValidtitle,isValidEmail,regxName}
