@@ -22,6 +22,7 @@ const blogSchema = new mongoose.Schema(
         },
         tags: {
             type:[String],
+            trim:true
          },
 
         category: {
@@ -31,7 +32,8 @@ const blogSchema = new mongoose.Schema(
         },
         subCategory: 
             {
-                type: [String]
+                type: [String],
+                trim:true
 
             },
         
@@ -55,6 +57,7 @@ const blogSchema = new mongoose.Schema(
         isDeleted: {
             type: Boolean,
             default: false,
+
         },
 
         deletedAt: {

@@ -23,10 +23,16 @@ const createAuthor = async function (req, res)  {
         if (!valid.isValid(fName)) {
             return  res.status(400).send({ status: false, msg: "Pls Provide First Name of Author" })
         }
+
+        if (!valid.regxName(fName)) {
+            return  res.status(400).send({ status: false, msg: "Pls give first Name  in Alphabets" })
+        }
         if (!valid.isValid(lName)) {
             return  res.status(400).send({ status: false, msg: "Pls Provide Last Name of Author" })
         }
-
+        if (!valid.regxName(lName)) {
+            return  res.status(400).send({ status: false, msg: "Pls give last Name  in Alphabets" })
+        }
         if (!valid.isValid(email)) {
             return  res.status(400).send({ status: false, msg: "email is Mandatory" })
         }
